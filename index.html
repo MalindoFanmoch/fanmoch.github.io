@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "nav article aside"
+          "nav footer footer";
+      }
+      header {
+        grid-area: header;
+        background-color: tomato;
+      }
+      nav {
+        grid-area: nav;
+        background-color: blueviolet;
+      }
+      article {
+        grid-area: article;
+      }
+      aside {
+        grid-area: aside;
+        background-color: aqua;
+      }
+      footer {
+        grid-area: footer;
+        background-color: red;
+      }
+
+      @media screen and (max-width: 700px) {
+        body {
+          grid-template-areas:
+            "header"
+            "nav"
+            "article"
+            "aside"
+            "footer";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="aaa">Header</header>
+    <nav>Nav</nav>
+    <article>
+      <p>dasdadasdsadsad <br />sdsadsadasdasdsad <br />saddasdasd</p>
+    </article>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+
+    <script>
+      const aaa = document.getElementById("aaa");
+      aaa.addEventListener("click", function () {
+        document.body.style.gridTemplateAreas = "header header header";
+      });
+    </script>
+  </body>
+</html>
